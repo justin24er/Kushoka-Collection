@@ -30,6 +30,7 @@
         scroll-snap-stop: always;
         overflow: hidden;
         overflow: hidden;
+        position: relative;
         & img {
             width: 100%;
             height: 100%;
@@ -43,4 +44,17 @@
 }
 .image-scroll-wrapper::-webkit-scrollbar {
     display: none;
+}
+.image-info {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: fit-content;
+    border-top-right-radius: 15px;
+    backdrop-filter: blur(4px) brightness(50%);
+    color: #f3f1f1;
+    font-weight: var(--fw-400);
+    padding: .5rem;
 }

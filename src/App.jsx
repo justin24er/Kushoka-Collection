@@ -76,7 +76,7 @@ function App() {
 
     useEffect(() => {
         const parent = imageWrapperRef.current
-        if(!parent) return //avoiding empty reference that happens before pare render 
+        if(!parent) return //avoiding empty reference that happens before parent render 
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -248,6 +248,10 @@ function App() {
                                     key={image.id} 
                                     className="image-view">
                                     <img src={image.url} loading="lazy" alt={image.jina} />
+                                    <span className="image-info">
+                                        <div className="img-date">{image.tarehe}</div>
+                                        <div className="img-title">{image.jina}</div>
+                                    </span>
                                 </div>
                             ))}
                         </div>
