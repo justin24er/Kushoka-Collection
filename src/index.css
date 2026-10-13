@@ -33,20 +33,9 @@ body:has(.page-wrapper.dark) {
     --top-shadow: #383737;
     --bottom-shadow: #1a1919;
     --clr-p: #f3f1f1ad;
-    --card-bg: #1b1111;
+    --card-bg: #6d6d6de0;
     --img-hover: var(--clr-btn);
 }
-/* @media (prefers-color-scheme: dark) {
-   :root {
-        --clr-font: #f3f1f1e0;
-        --clr-bg: #292929;
-        --clr-btn: #f3f1f188;
-        --top-shadow: #383737;
-        --bottom-shadow: #1a1919;
-        --clr-p: #f3f1f1ad;
-        --card-bg: #1b1111;
-    }  
-} */
 *,
 *::after,
 *::before {

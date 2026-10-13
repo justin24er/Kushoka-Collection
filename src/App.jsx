@@ -1,12 +1,13 @@
 import {useState, useEffect, useRef} from 'react'
-/* import Input from './components/ui/input'
-import Form from './components/form' */
+import Input from './components/ui/input'
+import Form from './components/form'
 import { useImages } from './hooks/useImages'
 import Button from './components/ui/button'
 import './App.css'
 /* import { useScrollLeft } from './hooks/useScrollLeft'*/
 import shiftLogo from './assets/up-arrow-thin.png'
 import ImageViewer from './components/imageViewer'
+import AdminForm from './components/adminForm'
 
 function App() {
     /*  const scrollRef1 = useScrollLeft(!loading && !error);
@@ -260,6 +261,30 @@ function App() {
                         </div>
                         <Button onClick={scrollRight} className="toggle right">{`>`}</Button>
                 </ImageViewer>
+                <Form 
+                    className="admin-form"
+                    >
+                        <div className="form-card">
+                            <div className="close-mark">x</div>
+                            <div className="form-head">jaza taarifa zako</div>
+                            <Input
+                                type="text"
+                                placeholder="Jina"
+                                className="jina"
+                                maxLength="15"
+                                autoComplete="off"
+                                value={} 
+                                onChange={}
+                            />
+                            <Input
+                                type="password"
+                                placeholder="password"
+                                className="password"
+                                value={}
+                                onChange={}
+                             />
+                        </div>
+                </Form>
                 <footer>
                     &copy; All rights reserved {(new Date())
                     .toLocaleDateString()
