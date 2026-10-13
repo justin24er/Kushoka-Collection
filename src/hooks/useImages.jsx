@@ -1,7 +1,7 @@
 import {getAllImages,
         deleteImage,
         addImage,
-        editImageDate
+        editImage
 } from '../services/kushokaAPI'
 import {useEffect, useReducer} from 'react'
 
@@ -31,6 +31,12 @@ function reducer(state, action) {
             images: state.images.map(image => image.id === action.payload.id
                 ? {...image, tarehe: action.payload.tarehe}
                 : image
+            )
+        }
+        case "edit_jina": return {...state,
+            images: state.images.map(image => image.id === action.payload.id
+                                              ? {...image, jina: action.payload.jina}
+                                              : image
             )
         }
         default: return state;
@@ -87,11 +93,25 @@ export function useImages() {
         }
     }
 
-    async function editDate(id, date_obj) {
+    async function editImageDate(id, date_obj) {
         try {
-            const img_obj = await editImageDate(id, date_obj)
+            const img_obj = await editImage(id, date_obj)
             dispatch({
                 type: "edit_date",
+                payload: img_obj
+            })
+            return {success: true}
+        }
+        catch(err) {
+            return {success: false, error: err.message + " *(imegoma kubadiri!)"}
+        }
+    }
+
+    async function editImageJina(id, jina_obj) {
+        try {
+            const img_obj = await editImage(id, jina_obj)
+            dispatch({
+                type: "edit_jina",
                 payload: img_obj
             })
             return {success: true}
@@ -106,7 +126,8 @@ export function useImages() {
             images: allImages.images,
             uploadImage,
             removeImage,
-            editDate,
+            editImageDate,
+            editImageJina,
     }
 
 }

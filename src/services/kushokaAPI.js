@@ -42,13 +42,14 @@ export async function addImage(img_object, img_file) {
     return data
 }
 
-export async function editImageDate(id,img_date) {
-    const {data,error} = await supabase
+export async function editImage(id,img_obj) {
+    const {data, error} = await supabase
     .from('images')
-    .update(img_date)
-    .eq('id',id)
+    .update(img_obj)
+    .eq('id', id)
     .select()
-    if(error) throw error;
+
+    if(error) throw error
 
     return data
 }
