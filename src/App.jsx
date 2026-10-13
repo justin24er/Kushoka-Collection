@@ -246,7 +246,9 @@ function App() {
                                 <div 
                                     ref={(el) => elRef.current[image.id] = el}
                                     key={image.id} 
-                                    className="image-view">
+                                    className="image-view"
+                                    title={image.jina}
+                                >
                                     <img src={image.url} loading="lazy" alt={image.jina} />
                                     <span className="image-info">
                                         <div className="img-date">{image.tarehe}</div>
