@@ -7,7 +7,6 @@ import './App.css'
 /* import { useScrollLeft } from './hooks/useScrollLeft'*/
 import shiftLogo from './assets/up-arrow-thin.png'
 import ImageViewer from './components/imageViewer'
-import AdminForm from './components/adminForm'
 
 function App() {
     /*  const scrollRef1 = useScrollLeft(!loading && !error);
@@ -29,6 +28,9 @@ function App() {
     const [view, setView] = useState("")
     const [isKey, setIsKey] = useState(false)
     const [currentIndex, setCurrentIndex] = useState(0)
+    const [isAdminForm, setIsAdminForm] = useState(false)
+    const [name, setName] = useState("")
+    const [passwd, setPasswd] = useState("")
 
     const elRef = useRef({})
     const imageWrapperRef = useRef(null)
@@ -135,7 +137,9 @@ function App() {
             <main>
                 <header>
                     <div>
-                        <Button className="admin-btn">msimazi</Button>
+                        <Button 
+                            className="admin-btn"
+                            onClick={() => setIsAdminForm(true)}>msimazi</Button>
                         <Button onClick={handleMode} className="mode-btn">
                             <i className={moon ? `active fa-solid fa-moon` : `fa-solid fa-moon`}></i>
                             <i className={sun ? `active fa-solid fa-sun` : `fa-solid fa-sun`}></i>
@@ -263,9 +267,12 @@ function App() {
                 </ImageViewer>
                 <Form 
                     className="admin-form"
+                    style={{display: isAdminForm ? "flex" : "none"}}
                     >
                         <div className="form-card">
-                            <div className="close-mark">x</div>
+                            <div
+                                onClick={() => setIsAdminForm(false)}
+                                className="close-mark">x</div>
                             <div className="form-head">jaza taarifa zako</div>
                             <Input
                                 type="text"
@@ -273,15 +280,15 @@ function App() {
                                 className="jina"
                                 maxLength="15"
                                 autoComplete="off"
-                                value={} 
-                                onChange={}
+                                value={name} 
+                                onChange={(e) => setName(e.target.value)}
                             />
                             <Input
                                 type="password"
                                 placeholder="password"
                                 className="password"
-                                value={}
-                                onChange={}
+                                value={passwd}
+                                onChange={(e) => setPasswd(e.target.value)}
                              />
                         </div>
                 </Form>

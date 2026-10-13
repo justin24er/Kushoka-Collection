@@ -1,0 +1,10 @@
+form.admin-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    inset: 0;
+    backdrop-filter: blur(2px) brightness(40%);
+    align-items: center;
+    justify-content: center;
+    z-index: 500;
+}
