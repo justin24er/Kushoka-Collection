@@ -24,7 +24,7 @@ form.admin-form {
     overflow: hidden;
     position: relative;
     color: var(--clr-font);
-    clip-path: path("M 0,15 A 15,15 0,0,1 15,0 L 285,0 A 15,15 0,0,1 300,15 L 300,195 A 15,15 0,0,1 285,210 L 200,210 A 15,15 0,0,0 185,225 L 185,240 A 15,15 0,0,1 170,255 L 15,250 A 15,15 0,0,1 0,240 L 0,15 Z")
+    clip-path: path("M 0,15 A 15,15 0,0,1 15,0 L 285,0 A 15,15 0,0,1 300,15 L 300,195 A 15,15 0,0,1 285,210 L 200,210 A 15,15 0,0,0 185,225 L 185,255 L 15,250 A 15,15 0,0,1 0,240 L 0,15 Z")
 }
 .form-card .close-mark {
     position: absolute; 

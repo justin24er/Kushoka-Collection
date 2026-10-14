@@ -1,6 +1,7 @@
 import '../../styles/input.css'
 
 function Input({
+    ref,
     type,
     placeholder,
     value,
@@ -11,6 +12,7 @@ function Input({
 }) {
     return (
         <input
+            ref={ref}
             type={type}
             value={value}
             placeholder={placeholder}
