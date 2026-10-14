@@ -116,3 +116,21 @@ button.toggle:hover {
     border-color: #fff;
     background: #ffffff2f;
 }
+button.admin-cta {
+    position: absolute;
+    font-family: var(--ff-secondary);
+    bottom: 0;
+    right: 2px;
+    height: 35px;
+    width: 108px;
+    border-radius: 15px 15px 15px 0;
+    border: none;
+    outline: 1px solid transparent;
+    outline-offset: -2px;
+    background: var(--clr-bg);
+    color: var(--clr-font);
+    transition: .3s;
+}
+button.admin-cta:hover {
+    outline-color: var(--clr-font)
+}

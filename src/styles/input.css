@@ -1,0 +1,12 @@
+input.jina,
+input.password {
+    outline: none;
+    border: none;
+    padding: .5rem 1rem;
+    font-family: var(--ff-secondary);
+    border-radius: 50vw; 
+    background: transparent;
+    box-shadow: -4px -4px 5px var(--bottom-shadow),
+                4px 4px 5px var(--top-shadow);
+    color: var(--clr-font)
+}
