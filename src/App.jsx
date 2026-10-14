@@ -133,10 +133,21 @@ function App() {
 
     function handleAdminForm(event) {
         event.preventDefault();
+        const jina = import.meta.env.VITE_ADMIN_NAME;
+        const nywila = import.meta.env.VITE_ADMIN_PASSWD;
 
        if(name === "" ||
           passwd === "" 
-       ) setFormError("*jaza taarifa zote") 
+       ) setFormError("*jaza taarifa zote")
+       else if(name !== jina && passwd !== nywila) {
+        setFormError("*taarifa zote si sahihi")
+       }
+       else if(name === jina && passwd !== nywila) {
+        setFormError("*password sio sahihi")
+       }
+       else if(name !== jina && passwd === nywila) {
+        setFormError("*jina sio sahihi")
+       }
     }
 
     useEffect(() => {
