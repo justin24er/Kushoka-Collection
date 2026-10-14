@@ -18,6 +18,7 @@ function App() {
            images,
            /* uploadImage,
            removeImage,
+
            editImageDate,
            editImageJina */
         } = useImages()
@@ -36,6 +37,8 @@ function App() {
 
     const elRef = useRef({})
     const imageWrapperRef = useRef(null)
+    const nameRef = useRef(null)
+    const passwdRef = useRef(null)
 
     
     const handleKeyDown = (e) => e.key === "Shift" && setIsKey(true)
@@ -138,7 +141,10 @@ function App() {
 
        if(name === "" ||
           passwd === "" 
-       ) setFormError("*jaza taarifa zote")
+       ) {
+        setFormError("*jaza taarifa zote"); 
+        [nameRef,passwdRef].find(input => input.current.value === "")?.current.focus()
+       }
        else if(name !== jina && passwd !== nywila) {
         setFormError("*taarifa zote si sahihi")
        }
@@ -147,6 +153,12 @@ function App() {
        }
        else if(name !== jina && passwd === nywila) {
         setFormError("*jina sio sahihi")
+       }
+       else {
+        setLoggedIn(true)
+        setName("")
+        setPasswd("")
+        setIsAdminForm(false)
        }
     }
 
@@ -167,7 +179,14 @@ function App() {
                     <div>
                         <Button 
                             className="admin-btn"
-                            onClick={() => setIsAdminForm(true)}>msimazi</Button>
+                            onClick={() => {
+                                if(loggedIn) {
+                                    setLoggedIn(false)
+                                }
+                                else {
+                                    setIsAdminForm(true)
+                                }
+                            }}>{loggedIn ? "ondoka <i class=\"fa-solid fa-arrow-right-from-bracket\"></i>" : "msimazi"}</Button>
                         <Button onClick={handleMode} className="mode-btn">
                             <i className={moon ? `active fa-solid fa-moon` : `fa-solid fa-moon`}></i>
                             <i className={sun ? `active fa-solid fa-sun` : `fa-solid fa-sun`}></i>
@@ -309,6 +328,7 @@ function App() {
                                     className="close-mark">x</div>
                                 <div className="form-head">Jaza taarifa zako</div>
                                 <Input
+                                    ref={nameRef}
                                     type="text"
                                     placeholder="Jina"
                                     className="jina"
@@ -318,6 +338,7 @@ function App() {
                                     onChange={(e) => setName(e.target.value)}
                                 />
                                 <Input
+                                    ref={passwdRef}
                                     type="password"
                                     placeholder="password"
                                     className="password"
