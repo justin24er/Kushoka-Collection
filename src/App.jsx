@@ -32,6 +32,7 @@ function App() {
     const [isAdminForm, setIsAdminForm] = useState(false)
     const [name, setName] = useState("")
     const [passwd, setPasswd] = useState("")
+    const [loggedIn, setLoggedIn] = useState(false)
 
     const elRef = useRef({})
     const imageWrapperRef = useRef(null)
@@ -141,7 +142,7 @@ function App() {
     useEffect(() => {
         const clear = setTimeout(() => {
             setFormError("")
-        },2000)
+        },5000)
         return () => clearTimeout(clear)
     },[formError])
 
@@ -289,8 +290,11 @@ function App() {
                         <div className="formCard-wrapper">
                             <div className="form-card">
                                 <div
-                                    onClick={() => setIsAdminForm(false)}
-                                    
+                                    onClick={() => {
+                                        setIsAdminForm(false)
+                                        setName("")
+                                        setPasswd("")
+                                    }}
                                     className="close-mark">x</div>
                                 <div className="form-head">Jaza taarifa zako</div>
                                 <Input
