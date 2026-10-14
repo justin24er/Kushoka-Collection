@@ -132,5 +132,5 @@ button.admin-cta {
     transition: .3s;
 }
 button.admin-cta:hover {
-    outline-color: var(--clr-font)
+    outline-color: var(--clr-btn-border);
 }
