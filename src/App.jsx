@@ -21,6 +21,7 @@ function App() {
            editImageDate,
            editImageJina */
         } = useImages()
+    const [formError, setFormError] = useState("")
     const [moon, setMoon] = useState(true)
     const [sun, setSun] = useState(false)
     const [isLight, setIsLight] = useState(false)
@@ -128,6 +129,21 @@ function App() {
              requestAnimationFrame(() => setModeContent("light"))
             }
     }
+
+    function handleAdminForm(event) {
+        event.preventDefault();
+
+       if(name === "" ||
+          passwd === "" 
+       ) setFormError("*jaza taarifa zote") 
+    }
+
+    useEffect(() => {
+        const clear = setTimeout(() => {
+            setFormError("")
+        },2000)
+        return () => clearTimeout(clear)
+    },[formError])
 
     return (
         <div style={isLight 
@@ -268,28 +284,34 @@ function App() {
                 <Form 
                     className="admin-form"
                     style={{display: isAdminForm ? "flex" : "none"}}
+                    onSubmit={handleAdminForm}
                     >
-                        <div className="form-card">
-                            <div
-                                onClick={() => setIsAdminForm(false)}
-                                className="close-mark">x</div>
-                            <div className="form-head">jaza taarifa zako</div>
-                            <Input
-                                type="text"
-                                placeholder="Jina"
-                                className="jina"
-                                maxLength="15"
-                                autoComplete="off"
-                                value={name} 
-                                onChange={(e) => setName(e.target.value)}
-                            />
-                            <Input
-                                type="password"
-                                placeholder="password"
-                                className="password"
-                                value={passwd}
-                                onChange={(e) => setPasswd(e.target.value)}
-                             />
+                        <div className="formCard-wrapper">
+                            <div className="form-card">
+                                <div
+                                    onClick={() => setIsAdminForm(false)}
+                                    
+                                    className="close-mark">x</div>
+                                <div className="form-head">Jaza taarifa zako</div>
+                                <Input
+                                    type="text"
+                                    placeholder="Jina"
+                                    className="jina"
+                                    maxLength="15"
+                                    autoComplete="off"
+                                    value={name} 
+                                    onChange={(e) => setName(e.target.value)}
+                                />
+                                <Input
+                                    type="password"
+                                    placeholder="password"
+                                    className="password"
+                                    value={passwd}
+                                    onChange={(e) => setPasswd(e.target.value)}
+                                 />
+                                {formError && <div className="error">{formError}</div>}
+                            </div>
+                            <Button type="submit" className="admin-cta">ingia</Button>
                         </div>
                 </Form>
                 <footer>

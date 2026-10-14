@@ -8,3 +8,37 @@ form.admin-form {
     justify-content: center;
     z-index: 500;
 }
+.formCard-wrapper {
+    height: max-content;
+    width: max-content;
+    position: relative;
+}
+.form-card {
+    width: 300px;
+    height: 250px;
+    background: var(--clr-bg);
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 2rem 4rem;
+    gap: 1.8rem;
+    overflow: hidden;
+    position: relative;
+    color: var(--clr-font);
+    clip-path: path("M 0,15 A 15,15 0,0,1 15,0 L 285,0 A 15,15 0,0,1 300,15 L 300,195 A 15,15 0,0,1 285,210 L 200,210 A 15,15 0,0,0 185,225 L 185,240 A 15,15 0,0,1 170,255 L 15,250 A 15,15 0,0,1 0,240 L 0,15 Z")
+}
+.form-card .close-mark {
+    position: absolute; 
+    top: 10px;
+    right: 20px;
+    font-size: 25px;
+    font-weight: var(--fw-200);
+    cursor: pointer;
+}
+.form-card .form-head {
+    text-align: center;
+    font-family: var(--ff-primary)
+}
+.form-card .error {
+    font-size: var(--fs-400);
+    font-family: monospace
+}
