@@ -153,6 +153,39 @@ section.main-content {
     right: 10px;
     cursor: pointer;
 }
+.crud-ellipsis:hover .cruds {
+    display: flex;
+}
+.cruds {
+    font-size: var(--fs-300);
+    position: absolute;
+    text-wrap: nowrap;
+    left: -90px;
+    padding-inline-end: .8rem;
+    text-align: start;
+    display: none;
+    flex-direction: column;
+    gap: .5rem;
+}
+.cruds:hover {
+    display: flex;
+}
+.cruds > div {
+    color: #fff;
+    padding: .3rem .5rem;
+    font-weight: var(--fw-600);
+    border-radius: 50vw;
+    backdrop-filter: blur(4px) brightness(50%);
+    outline: 1px solid transparent;
+    outline-offset: -2px;
+    transition: .2s;
+}
+div.futa {
+    color: red;
+}
+.cruds > div:hover {
+    outline-color: #ffffff8e;
+}
 .page-des {
     display: flex;
     flex-direction: column;
