@@ -1,5 +1,7 @@
 input.jina,
-input.password {
+input.password,
+input#jina,
+input#tarehe {
     outline: none;
     border: none;
     padding: .5rem 1rem;
@@ -9,4 +11,10 @@ input.password {
     box-shadow: -4px -4px 5px var(--bottom-shadow),
                 4px 4px 5px var(--top-shadow);
     color: var(--clr-font)
+}
+input#picha {
+    cursor: pointer;
+}
+input#tarehe {
+    color: 
 }
