@@ -176,7 +176,7 @@ section.main-content {
     font-weight: var(--fw-600);
     border-radius: 50vw;
     backdrop-filter: blur(4px) brightness(50%);
-    outline: 1px solid transparent;
+    outline: 1px dashed transparent;
     outline-offset: -2px;
     transition: .2s;
 }

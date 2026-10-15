@@ -4,9 +4,11 @@ function Button({
     type,
     className,
     children,
-    onClick
+    onClick,
+    style
 }) {
     return <button type={type}
+                style={style}
                 className={className}
                 onClick={onClick}>
                     {children}
