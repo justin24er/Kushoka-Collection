@@ -186,12 +186,19 @@ function App() {
                                 else {
                                     setIsAdminForm(true)
                                 }
-                            }}>{loggedIn ? <p>ondoka <i class="fa-solid fa-right-from-bracket"></i></p> : "msimazi"}</Button>
+                            }}>
+                            {loggedIn ? <p>ondoka <i class="fa-solid fa-right-from-bracket"></i></p> : "msimazi"}
+                        </Button>
                         <Button onClick={handleMode} className="mode-btn">
                             <i className={moon ? `active fa-solid fa-moon` : `fa-solid fa-moon`}></i>
                             <i className={sun ? `active fa-solid fa-sun` : `fa-solid fa-sun`}></i>
                         </Button>
                     </div>
+                    <Button 
+                        style={{display: loggedIn ? "flex" : "none"}}
+                        className="add-img-btn">
+                            <i class="fa-solid fa-images"></i>
+                    </Button>
                 </header>
                 <section className="main-content">
                     <div className="page-des">

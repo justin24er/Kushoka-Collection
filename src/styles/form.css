@@ -33,6 +33,7 @@ form.admin-form {
     font-size: 25px;
     font-weight: var(--fw-200);
     cursor: pointer;
+    user-select: none;
 }
 .form-card .form-head {
     text-align: center;

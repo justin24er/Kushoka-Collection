@@ -5,7 +5,8 @@ button {
         font-size: var(--fs-400)
     }
 }
-button.admin-btn {
+button.admin-btn,
+button.add-img-btn {
     font-family: inherit;
     padding-inline: 1rem;
     font-weight: var(--fw-500);
@@ -19,15 +20,25 @@ button.admin-btn {
     border-radius: 50px;
     corner-shape: squircle;
     overflow: hidden;
-    transition: .3s;
+    transition: color .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-button.admin-btn:active {scale: .95}
+button.add-img-btn {
+    transition: color .3s , background .3s .5s, box-shadow .3s .5s;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+}
+button.admin-btn:active,button.add-img-btn:active {scale: .95}
 button.admin-btn:hover,
-button.mode-btn:hover {
+button.mode-btn:hover,
+button.add-img-btn:hover {
     color: var(--clr-font);    
 }
 button.admin-btn:active,
-button.mode-btn:active {
+button.mode-btn:active,
+button.add-img-btn:active {
     box-shadow: inset 4px 4px 5px var(--bottom-shadow),
                 inset -4px -4px 5px var(--top-shadow);
 }
@@ -45,7 +56,7 @@ button.mode-btn {
                 -4px -4px 5px var(--top-shadow);
     border-radius: 50%;
     overflow: hidden;
-    transition: .3s;
+    transition: color .3s;
 }
 button.mode-btn i{
     position: absolute;
