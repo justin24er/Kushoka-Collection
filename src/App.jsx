@@ -225,19 +225,21 @@ function App() {
                                 <div /* ref={scrollRef1} */ className="album-row row-1">
                                     <div className="images-wrapper">
                                         {images.map(image => (
-                                            <div onClick={() => setView(image.id)} key={image.id} title={image.jina} className="image-container">
+                                            <div key={image.id} title={image.jina} className="image-container">
                                                 <div className="image">
-                                                    <img src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
+                                                    <img onClick={() => setView(image.id)} src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
                                                 </div>
                                                 <div className="image-date">{image.tarehe.replaceAll("-","/")}</div>
+                                                <div className="crud-ellipsis"><i className="fa-solid fa-ellipsis-vertical"></i></div>
                                             </div>
                                         ))}
                                         {images.map(image => (
-                                            <div onClick={() => setView(image.id)} key={image.id} title={image.jina} className="image-container">
+                                            <div key={image.id} title={image.jina} className="image-container">
                                                 <div className="image">
-                                                    <img src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
+                                                    <img onClick={() => setView(image.id)} src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
                                                 </div>
                                                 <div className="image-date">{image.tarehe.replaceAll("-","/")}</div>
+                                                <div className="crud-ellipsis"><i className="fa-solid fa-ellipsis-vertical"></i></div>
                                             </div>
                                         ))}
                                     </div>
@@ -245,19 +247,21 @@ function App() {
                                 <div /* ref={scrollRef2} */ className="album-row row-2">
                                     <div className="images-wrapper">
                                         {images.map(image => (
-                                            <div onClick={() => setView(image.id)} key={image.id} title={image.jina} className="image-container">
+                                            <div key={image.id} title={image.jina} className="image-container">
                                                 <div className="image">
-                                                    <img src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
+                                                    <img onClick={() => setView(image.id)} src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
                                                 </div>
                                                 <div className="image-date">{image.tarehe.replaceAll("-","/")}</div>
+                                                <div className="crud-ellipsis"><i className="fa-solid fa-ellipsis-vertical"></i></div>
                                             </div>
                                         ))}
                                         {images.map(image => (
-                                            <div onClick={() => setView(image.id)} key={image.id} title={image.jina} className="image-container">
+                                            <div key={image.id} title={image.jina} className="image-container">
                                                 <div className="image">
-                                                    <img src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
+                                                    <img onClick={() => setView(image.id)} src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
                                                 </div>
                                                 <div className="image-date">{image.tarehe.replaceAll("-","/")}</div>
+                                                <div className="crud-ellipsis"><i className="fa-solid fa-ellipsis-vertical"></i></div>
                                             </div>
                                         ))}
                                     </div>
@@ -265,19 +269,21 @@ function App() {
                                 <div /* ref={scrollRef3} */ className="album-row row-3">
                                     <div className="images-wrapper">
                                         {images.map(image => (
-                                            <div onClick={() => setView(image.id)} key={image.id} title={image.jina} className="image-container">
+                                            <div key={image.id} title={image.jina} className="image-container">
                                                 <div className="image">
-                                                    <img src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
+                                                    <img onClick={() => setView(image.id)} src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
                                                 </div>
                                                 <div className="image-date">{image.tarehe.replaceAll("-","/")}</div>
+                                                <div className="crud-ellipsis"><i className="fa-solid fa-ellipsis-vertical"></i></div>
                                             </div>
                                         ))}
                                         {images.map(image => (
-                                            <div onClick={() => setView(image.id)} key={image.id} title={image.jina} className="image-container">
+                                            <div key={image.id} title={image.jina} className="image-container">
                                                 <div className="image">
-                                                    <img src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
+                                                    <img onClick={() => setView(image.id)} src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
                                                 </div>
                                                 <div className="image-date">{image.tarehe.replaceAll("-","/")}</div>
+                                                <div className="crud-ellipsis"><i className="fa-solid fa-ellipsis-vertical"></i></div>
                                             </div>
                                         ))}
                                     </div>

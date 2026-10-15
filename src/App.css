@@ -85,6 +85,9 @@ section.main-content {
         transform: translateX(calc(-50% - .5rem)) 
     }
 }
+.album-row .images-wrapper.admin:hover {
+    animation-play-state: paused;
+}
 .row-2 {
     --duration: 120s;
     --direction: reverse;
@@ -139,6 +142,16 @@ section.main-content {
     @media screen and (max-width: 514px) {
         font-size: var(--fs-300)
     }
+}
+.image-container .crud-ellipsis {
+    position: absolute;
+    background: var(--clr-bg);
+    color: var(--clr-font);
+    border-radius: 50%;
+    padding: .2rem;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
 }
 .page-des {
     display: flex;
