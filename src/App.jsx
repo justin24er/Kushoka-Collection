@@ -223,67 +223,109 @@ function App() {
                         (error ? <div className="error page-album">{error}</div> : 
                             <div className="page-album">
                                 <div /* ref={scrollRef1} */ className="album-row row-1">
-                                    <div className="images-wrapper">
+                                    <div className={loggedIn ? "images-wrapper admin" : "images-wrapper"}>
                                         {images.map(image => (
-                                            <div key={image.id} title={image.jina} className="image-container">
+                                            <div key={image.id} className="image-container">
                                                 <div className="image">
-                                                    <img onClick={() => setView(image.id)} src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
+                                                    <img title={image.jina} onClick={() => setView(image.id)} src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
                                                 </div>
                                                 <div className="image-date">{image.tarehe.replaceAll("-","/")}</div>
-                                                <div className="crud-ellipsis"><i className="fa-solid fa-ellipsis-vertical"></i></div>
+                                                <div style={{display: loggedIn ? "flex" : "none"}} className="crud-ellipsis">
+                                                    <i className="fa-solid fa-ellipsis-vertical"></i>
+                                                    <div className="cruds">
+                                                        <div className="badiri-tarehe">badiri tarehe</div>
+                                                        <div className="badiri-kichwa">badiri kichwa</div>
+                                                        <div className="futa">futa picha</div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         ))}
                                         {images.map(image => (
-                                            <div key={image.id} title={image.jina} className="image-container">
+                                            <div key={image.id} className="image-container">
                                                 <div className="image">
-                                                    <img onClick={() => setView(image.id)} src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
+                                                    <img title={image.jina} onClick={() => setView(image.id)} src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
                                                 </div>
                                                 <div className="image-date">{image.tarehe.replaceAll("-","/")}</div>
-                                                <div className="crud-ellipsis"><i className="fa-solid fa-ellipsis-vertical"></i></div>
+                                                <div style={{display: loggedIn ? "flex" : "none"}} className="crud-ellipsis">
+                                                    <i className="fa-solid fa-ellipsis-vertical"></i>
+                                                    <div className="cruds">
+                                                        <div className="badiri-tarehe">badiri tarehe</div>
+                                                        <div className="badiri-kichwa">badiri kichwa</div>
+                                                        <div className="futa">futa picha</div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         ))}
                                     </div>
                                 </div>
                                 <div /* ref={scrollRef2} */ className="album-row row-2">
-                                    <div className="images-wrapper">
+                                    <div className={loggedIn ? "images-wrapper admin" : "images-wrapper"}>
                                         {images.map(image => (
-                                            <div key={image.id} title={image.jina} className="image-container">
+                                            <div key={image.id} className="image-container">
                                                 <div className="image">
-                                                    <img onClick={() => setView(image.id)} src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
+                                                    <img title={image.jina} onClick={() => setView(image.id)} src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
                                                 </div>
                                                 <div className="image-date">{image.tarehe.replaceAll("-","/")}</div>
-                                                <div className="crud-ellipsis"><i className="fa-solid fa-ellipsis-vertical"></i></div>
+                                                <div style={{display: loggedIn ? "flex" : "none"}} className="crud-ellipsis">
+                                                    <i className="fa-solid fa-ellipsis-vertical"></i>
+                                                    <div className="cruds">
+                                                        <div className="badiri-tarehe">badiri tarehe</div>
+                                                        <div className="badiri-kichwa">badiri kichwa</div>
+                                                        <div className="futa">futa picha</div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         ))}
                                         {images.map(image => (
-                                            <div key={image.id} title={image.jina} className="image-container">
+                                            <div key={image.id} className="image-container">
                                                 <div className="image">
-                                                    <img onClick={() => setView(image.id)} src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
+                                                    <img title={image.jina} onClick={() => setView(image.id)} src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
                                                 </div>
                                                 <div className="image-date">{image.tarehe.replaceAll("-","/")}</div>
-                                                <div className="crud-ellipsis"><i className="fa-solid fa-ellipsis-vertical"></i></div>
+                                                <div style={{display: loggedIn ? "flex" : "none"}} className="crud-ellipsis">
+                                                    <i className="fa-solid fa-ellipsis-vertical"></i>
+                                                    <div className="cruds">
+                                                        <div className="badiri-tarehe">badiri tarehe</div>
+                                                        <div className="badiri-kichwa">badiri kichwa</div>
+                                                        <div className="futa">futa picha</div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         ))}
                                     </div>
                                 </div>
                                 <div /* ref={scrollRef3} */ className="album-row row-3">
-                                    <div className="images-wrapper">
+                                    <div className={loggedIn ? "images-wrapper admin" : "images-wrapper"}>
                                         {images.map(image => (
-                                            <div key={image.id} title={image.jina} className="image-container">
+                                            <div key={image.id} className="image-container">
                                                 <div className="image">
-                                                    <img onClick={() => setView(image.id)} src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
+                                                    <img title={image.jina} onClick={() => setView(image.id)} src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
                                                 </div>
                                                 <div className="image-date">{image.tarehe.replaceAll("-","/")}</div>
-                                                <div className="crud-ellipsis"><i className="fa-solid fa-ellipsis-vertical"></i></div>
+                                                <div style={{display: loggedIn ? "flex" : "none"}} className="crud-ellipsis">
+                                                    <i className="fa-solid fa-ellipsis-vertical"></i>
+                                                    <div className="cruds">
+                                                        <div className="badiri-tarehe">badiri tarehe</div>
+                                                        <div className="badiri-kichwa">badiri kichwa</div>
+                                                        <div className="futa">futa picha</div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         ))}
                                         {images.map(image => (
-                                            <div key={image.id} title={image.jina} className="image-container">
+                                            <div key={image.id} className="image-container">
                                                 <div className="image">
-                                                    <img onClick={() => setView(image.id)} src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
+                                                    <img title={image.jina} onClick={() => setView(image.id)} src={image.url} width="100" height="100" loading="lazy" alt={image.jina} />
                                                 </div>
                                                 <div className="image-date">{image.tarehe.replaceAll("-","/")}</div>
-                                                <div className="crud-ellipsis"><i className="fa-solid fa-ellipsis-vertical"></i></div>
+                                                <div style={{display: loggedIn ? "flex" : "none"}} className="crud-ellipsis">
+                                                    <i className="fa-solid fa-ellipsis-vertical"></i>
+                                                    <div className="cruds">
+                                                        <div className="badiri-tarehe">badiri tarehe</div>
+                                                        <div className="badiri-kichwa">badiri kichwa</div>
+                                                        <div className="futa">futa picha</div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         ))}
                                     </div>
