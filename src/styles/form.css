@@ -35,7 +35,7 @@ form.admin-form {
     cursor: pointer;
     user-select: none;
 }
-.form-card .form-head {
+.form-head {
     text-align: center;
     font-family: var(--ff-primary)
 }
@@ -52,4 +52,24 @@ form.addImage-form {
     align-items: center;
     justify-content: center;
     z-index: 500;
+}
+.add-img-form {
+    background: var(--clr-bg);
+    color: var(--clr-font);
+    width: 300px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    padding: 3rem 2rem 4rem;
+    overflow: hidden; 
+}
+.add-img-form label {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.add-img-form label span {
+    font-size: var(--fs-400)
 }

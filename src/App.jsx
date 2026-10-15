@@ -35,6 +35,9 @@ function App() {
     const [name, setName] = useState("")
     const [passwd, setPasswd] = useState("")
     const [loggedIn, setLoggedIn] = useState(false)
+    const [picha, setPicha] = useState("")
+    const [jina, setJina] = useState("")
+    const [tarehe, setTarehe] = useState("")
 
     const elRef = useRef({})
     const imageWrapperRef = useRef(null)
@@ -397,7 +400,7 @@ function App() {
                                 <Input
                                     ref={passwdRef}
                                     type="password"
-                                    placeholder="password"
+                                    placeholder="Password"
                                     className="password"
                                     value={passwd}
                                     onChange={(e) => setPasswd(e.target.value)}
@@ -417,9 +420,35 @@ function App() {
                                 className="close-mark"
                                 onClick={() => setIsImgForm(false)}>x</div>
                             <div className="form-head">Ongeza Picha</div>
-                            <Input />
-                            <Input />
-                            <Input />
+                            <label htmlFor="picha" className="add-img">
+                                   <span>Rusha picha</span> 
+                                   <Input
+                                        type="file"
+                                        value={picha}
+                                        id="picha"
+                                        onChange={(e) => setPicha(e.target.files[0])}
+                                        />
+                            </label>
+                            <label htmlFor="jina" className="img-name">
+                                   <span>Jina la picha</span> 
+                                   <Input
+                                        type="text"
+                                        value={jina}
+                                        id="jina"
+                                        maxLength="10"
+                                        autoComplete="off"
+                                        onChange={(e) => setJina(e.target.value)}
+                                        />
+                            </label>
+                            <label htmlFor="tarehe" className="img-date">
+                                   <span>Tarehe ya picha</span> 
+                                   <Input
+                                        type="date"
+                                        value={tarehe}
+                                        id="tarehe"
+                                        onChange={(e) => setTarehe(e.target.value)}
+                                        />
+                            </label>
                         </div>
                         <Button
                             className="add-img-cta"

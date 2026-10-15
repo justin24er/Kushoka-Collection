@@ -6,6 +6,7 @@ function Input({
     placeholder,
     value,
     className,
+    id,
     onChange,
     maxLength,
     autoComplete
@@ -17,6 +18,7 @@ function Input({
             value={value}
             placeholder={placeholder}
             className={className}
+            id={id}
             onChange={onChange}
             maxLength={maxLength}
             autoComplete={autoComplete} />
