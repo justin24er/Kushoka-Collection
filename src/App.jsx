@@ -31,6 +31,7 @@ function App() {
     const [isKey, setIsKey] = useState(false)
     const [currentIndex, setCurrentIndex] = useState(0)
     const [isAdminForm, setIsAdminForm] = useState(false)
+    const [isImgForm, setIsImgForm] = useState(false)
     const [name, setName] = useState("")
     const [passwd, setPasswd] = useState("")
     const [loggedIn, setLoggedIn] = useState(false)
@@ -196,7 +197,8 @@ function App() {
                     </div>
                     <Button 
                         style={{display: loggedIn ? "flex" : "none"}}
-                        className="add-img-btn">
+                        className="add-img-btn"
+                        onClick={() => setIsImgForm(true)}>
                             <i class="fa-solid fa-images"></i>
                     </Button>
                 </header>
@@ -404,6 +406,25 @@ function App() {
                             </div>
                             <Button type="submit" className="admin-cta">ingia</Button>
                         </div>
+                </Form>
+                <Form
+                    className="addImage-form"
+                    style={{display: isImgForm ? "flex" : "none"}}
+                    >
+                    <div className="formCard-wrapper">
+                        <div className="add-img-form">
+                            <div 
+                                className="close-mark"
+                                onClick={() => setIsImgForm(false)}>x</div>
+                            <div className="form-head">Ongeza Picha</div>
+                            <Input />
+                            <Input />
+                            <Input />
+                        </div>
+                        <Button
+                            className="add-img-cta"
+                            type="submit">ongeza</Button>
+                    </div>
                 </Form>
                 <footer>
                     &copy; All rights reserved {(new Date())
