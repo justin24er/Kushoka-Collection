@@ -43,7 +43,6 @@ function App() {
     const imageWrapperRef = useRef(null)
     const nameRef = useRef(null)
     const passwdRef = useRef(null)
-    const pichaRef = useRef(null)
 
     
     const handleKeyDown = (e) => e.key === "Shift" && setIsKey(true)
@@ -430,14 +429,13 @@ function App() {
                                     setIsImgForm(false)
                                     setJina("")
                                     setTarehe("")
-                                    pichaRef.current.value = ""
+                                    setPicha("")
                                     }}>x</div>
                             <div className="form-head">Ongeza Picha</div>
                             <label htmlFor="picha" className="add-img">
                                    <span>Rusha picha</span> 
                                    <Input
                                         type="file"
-                                        ref={pichaRef}
                                         id="picha"
                                         accept="image/jpeg"
                                         onChange={(e) => setPicha(e.target.files[0])}
