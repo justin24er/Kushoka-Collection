@@ -39,9 +39,15 @@ form.admin-form {
     text-align: center;
     font-family: var(--ff-primary)
 }
-.form-card .error {
+.form-card .error,
+.add-img-form .error {
     font-size: var(--fs-400);
     font-family: monospace
+}
+.success {
+    font-size: var(--fs-400);
+    font-family: monospace;
+    color: green;
 }
 form.addImage-form {
     position: fixed;

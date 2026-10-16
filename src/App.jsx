@@ -16,13 +16,14 @@ function App() {
     const {loading,
            error,
            images,
-           /* uploadImage,
-           removeImage,
+           uploadImage,
+           /* removeImage,
 
            editImageDate,
            editImageJina */
         } = useImages()
     const [formError, setFormError] = useState("")
+    const [formSuccess, setFormSuccess]  = useState("")
     const [moon, setMoon] = useState(true)
     const [sun, setSun] = useState(false)
     const [isLight, setIsLight] = useState(false)
@@ -166,17 +167,39 @@ function App() {
        }
     }
 
-    function handleImageUpload(event) {
+    async function handleImageUpload(event) {
         event.preventDefault();
         
+        if(picha === "" ||
+           jina === "" ||
+           tarehe === ""
+        ) {
+            setFormError("*jaza taarifa zote")
+        }
+        else {
+            const file_name = `${Date.now()}-${picha.name}`
+            const feedback = await uploadImage({
+                                        jina: jina,
+                                        tarehe: tarehe,
+                                        faili: file_name
+                                    },picha)
+            if(feedback.success) {
+                setFormSuccess("imefanikiwa!")
+            }
+            else if(!feedback.success) {
+                setFormError("*imeshindikana!")
+                console.log(feedback.error)
+            }
+        }
     }
 
     useEffect(() => {
         const clear = setTimeout(() => {
             setFormError("")
+            setFormSuccess("")
         },5000)
         return () => clearTimeout(clear)
-    },[formError])
+    },[formError,formSuccess])
 
 
     return (
@@ -467,6 +490,8 @@ function App() {
                                         onChange={(e) => setTarehe(e.target.value)}
                                         />
                             </label>
+                            {formError && <div className="error">{formError}</div>}
+                            {formSuccess && <div className="success">{formSuccess}</div>}
                         </div>
                         <Button
                             className="add-img-cta"
