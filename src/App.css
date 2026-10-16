@@ -145,8 +145,8 @@ section.main-content {
 }
 .image-container .crud-ellipsis {
     position: absolute;
-    background: var(--clr-bg);
-    color: var(--clr-font);
+    background: #f3f1f1;
+    color: #212121;
     border-radius: 50%;
     padding: .2rem;
     top: 10px;
@@ -171,11 +171,10 @@ section.main-content {
     display: flex;
 }
 .cruds > div {
-    color: #fff;
+    color: #212121;
+    background: #f3f1f1;
     padding: .3rem .5rem;
     font-weight: var(--fw-600);
-    border-radius: 50vw;
-    backdrop-filter: blur(4px) brightness(50%);
     outline: 1px dashed transparent;
     outline-offset: -2px;
     transition: .2s;
@@ -184,7 +183,7 @@ div.futa {
     color: red;
 }
 .cruds > div:hover {
-    outline-color: #ffffff8e;
+    outline-color: #0000008e;
 }
 .page-des {
     display: flex;

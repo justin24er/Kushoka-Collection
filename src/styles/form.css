@@ -83,7 +83,8 @@ form.addImage-form {
     cursor: text;
 }
 .img-input i {
-    font-size: var(--fs-600)
+    font-size: var(--fs-600);
+    color: var(--clr-btn)
 }
 .img-input .filename {
     font-size: var(--fs-400);
