@@ -64,13 +64,31 @@ form.addImage-form {
     gap: 1.8rem;
     padding: 3rem 2rem 4rem;
     overflow: hidden; 
+    clip-path: path("M 0,15 A 15,15 0,0,1 15,0 L 285,0 A 15,15 0,0,1 300,15 L 300,345 A 15,15 0,0,1 285,360 L 200,360 A 15,15 0,0,0 185,375 L 185,400 L 15,400 A 15,15 0,0,1 0,385 Z")
 }
 .add-img-form label {
     display: flex;
     flex-direction: column;
     gap: .5rem;
+    position: relative;
 }
 .add-img-form label span {
     font-size: var(--fs-400);
     filter: opacity(.7)
+}
+.add-img-form .add-img .img-input {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    cursor: text;
+}
+.img-input i {
+    font-size: var(--fs-600)
+}
+.img-input .filename {
+    font-size: var(--fs-400);
+    text-wrap: nowrap;
+    width: 82%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

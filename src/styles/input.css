@@ -1,6 +1,7 @@
 input.jina,
 input.password,
 input#jina,
+.img-input,
 input#tarehe {
     outline: none;
     border: none;
@@ -10,8 +11,9 @@ input#tarehe {
     background: transparent;
     box-shadow: -4px -4px 5px var(--bottom-shadow),
                 4px 4px 5px var(--top-shadow);
-    color: var(--clr-font)
+    color: var(--clr-font);
+    overflow: hidden;
 }
 input#picha {
-    cursor: pointer;
+    display: none;
 }
