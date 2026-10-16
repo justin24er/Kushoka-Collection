@@ -17,10 +17,9 @@ function App() {
            error,
            images,
            uploadImage,
-           /* removeImage,
-
            editImageDate,
-           editImageJina */
+           removeImage,
+           editImageJina 
         } = useImages()
     const [formError, setFormError] = useState("")
     const [formSuccess, setFormSuccess]  = useState("")
@@ -39,6 +38,10 @@ function App() {
     const [picha, setPicha] = useState("")
     const [jina, setJina] = useState("")
     const [tarehe, setTarehe] = useState("")
+    const [isChangeDate, setIsChangeDate] = useState(false)
+    const [isChangeTitle, setIsChangeTitle] = useState(false)
+    const [newDate, setNewDate] = useState("")
+    const [newTitle, setNewTitle] = useState("")
 
     const elRef = useRef({})
     const imageWrapperRef = useRef(null)
@@ -191,6 +194,18 @@ function App() {
                 console.log(feedback.error)
             }
         }
+    }
+
+    async function handleChangeDate(event)  {
+        event.preventDefault();
+    }
+
+    async function handleChangeTitle(event) {
+        event.preventDefault();
+    }
+
+    async function deleteImage() {
+
     }
 
     useEffect(() => {
@@ -436,7 +451,7 @@ function App() {
                                  />
                                 {formError && <div className="error">{formError}</div>}
                             </div>
-                            <Button type="submit" className="admin-cta">ingia</Button>
+                            <Button type="submit" className="form-cta">ingia</Button>
                         </div>
                 </Form>
                 <Form
@@ -476,6 +491,7 @@ function App() {
                                         type="text"
                                         value={jina}
                                         id="jina"
+                                        className="jina"
                                         maxLength="15"
                                         autoComplete="off"
                                         onChange={(e) => setJina(e.target.value)}
@@ -487,17 +503,60 @@ function App() {
                                         type="date"
                                         value={tarehe}
                                         id="tarehe"
+                                        className="tarehe"
                                         onChange={(e) => setTarehe(e.target.value)}
                                         />
                             </label>
                             {formError && <div className="error">{formError}</div>}
                             {formSuccess && <div className="success">{formSuccess}</div>}
                         </div>
-                        <Button
-                            className="add-img-cta"
-                            type="submit">ongeza</Button>
+                        <Button className="form-cta" type="submit">ongeza</Button>
                     </div>
                 </Form>
+                <Form 
+                    className="changeDate-form"
+                    style={{display: isChangeDate ? "flex" : "none"}}
+                    onSubmit={handleChangeDate}>
+                        <div className="formCard-wrapper">
+                            <div className="modify-form">
+                                <div 
+                                    className="close-mark"
+                                    onClick={() => {
+                                        setIsChangeDate(false)
+                                    }}>x</div>
+                                <div className="form-head">Badiri tarehe</div>
+                                <Input 
+                                    type="date"
+                                    value={newDate}
+                                    className="tarehe"
+                                    onChange={(e) =>  setNewDate(e.target.value)}/>
+                            </div>
+                            <Button type="submit" className="form-cta">badiri</Button>
+                        </div>
+                    </Form>
+                <Form 
+                    className="changeTitle-form"
+                    style={{display: isChangeTitle ? "flex" : "none"}}
+                    onSubmit={handleChangeTitle}>
+                        <div className="formCard-wrapper">
+                            <div className="modify-form">
+                                <div 
+                                    className="close-mark"
+                                    onClick={() => {
+                                        setIsChangeTitle(false)
+                                    }}>x</div>
+                                <div className="form-head">Badiri kichwa</div>
+                                <Input 
+                                    type="text"
+                                    value={newTitle}
+                                    className="jina"
+                                    maxLength="15"
+                                    autoComplete="off"
+                                    onChange={(e) => setNewTitle(e.target.value)}/>
+                            </div>
+                            <Button type="submit" className="form-cta">badiri</Button>
+                        </div>
+                    </Form>
                 <footer>
                     &copy; All rights reserved {(new Date())
                     .toLocaleDateString()

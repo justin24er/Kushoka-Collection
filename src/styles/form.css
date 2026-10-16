@@ -1,4 +1,7 @@
-form.admin-form {
+form.admin-form,
+form.addImage-form,
+form.changeDate-form,
+form.changeTitle-form {
     position: fixed;
     top: 0;
     left: 0;
@@ -48,16 +51,6 @@ form.admin-form {
     font-size: var(--fs-400);
     font-family: monospace;
     color: green;
-}
-form.addImage-form {
-    position: fixed;
-    top: 0;
-    left: 0;
-    inset: 0;
-    backdrop-filter: blur(2px) brightness(40%);
-    align-items: center;
-    justify-content: center;
-    z-index: 500;
 }
 .add-img-form {
     background: var(--clr-bg);

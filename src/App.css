@@ -125,7 +125,6 @@ section.main-content {
     border-radius: 5px;
     corner-shape: bevel;
     user-select: none;
-    filter: grayscale(90%) 
 }
 .image-container .image-date {
     position: absolute;
