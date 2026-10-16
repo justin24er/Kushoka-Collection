@@ -166,6 +166,11 @@ function App() {
        }
     }
 
+    function handleImageUpload(event) {
+        event.preventDefault();
+        
+    }
+
     useEffect(() => {
         const clear = setTimeout(() => {
             setFormError("")
@@ -413,12 +418,18 @@ function App() {
                 <Form
                     className="addImage-form"
                     style={{display: isImgForm ? "flex" : "none"}}
+                    onSubmit={handleImageUpload}
                     >
                     <div className="formCard-wrapper">
                         <div className="add-img-form">
                             <div 
                                 className="close-mark"
-                                onClick={() => setIsImgForm(false)}>x</div>
+                                onClick={() => {
+                                    setIsImgForm(false)
+                                    setPicha("")
+                                    setJina("")
+                                    setJina("")
+                                    }}>x</div>
                             <div className="form-head">Ongeza Picha</div>
                             <label htmlFor="picha" className="add-img">
                                    <span>Rusha picha</span> 
@@ -435,7 +446,7 @@ function App() {
                                         type="text"
                                         value={jina}
                                         id="jina"
-                                        maxLength="10"
+                                        maxLength="15"
                                         autoComplete="off"
                                         onChange={(e) => setJina(e.target.value)}
                                         />

@@ -71,5 +71,6 @@ form.addImage-form {
     gap: .5rem;
 }
 .add-img-form label span {
-    font-size: var(--fs-400)
+    font-size: var(--fs-400);
+    filter: opacity(.7)
 }

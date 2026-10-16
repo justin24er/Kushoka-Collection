@@ -127,7 +127,8 @@ button.toggle:hover {
     border-color: #fff;
     background: #ffffff2f;
 }
-button.admin-cta {
+button.admin-cta,
+button.add-img-cta {
     position: absolute;
     font-family: var(--ff-secondary);
     bottom: 0;
@@ -142,6 +143,7 @@ button.admin-cta {
     color: var(--clr-font);
     transition: .3s;
 }
-button.admin-cta:hover {
+button.admin-cta:hover,
+button.add-img-cta:hover {
     outline-color: var(--clr-btn-border);
 }
