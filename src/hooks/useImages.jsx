@@ -75,7 +75,7 @@ export function useImages() {
             return {success: true}
         }
         catch(err) {
-            return {success: false, error: err.message + " *(imegoma kurusha!)"}
+            return {success: false, error: err.message}
         }
     } 
 
@@ -89,7 +89,7 @@ export function useImages() {
             return {success: true}
         }
         catch(err) {
-            return {success: false, error: err.message + " *(imegoma kufuta!)"}
+            return {success: false, error: err.message}
         }
     }
 
@@ -103,7 +103,7 @@ export function useImages() {
             return {success: true}
         }
         catch(err) {
-            return {success: false, error: err.message + " *(imegoma kubadiri!)"}
+            return {success: false, error: err.message}
         }
     }
 
@@ -117,7 +117,7 @@ export function useImages() {
             return {success: true}
         }
         catch(err) {
-            return {success: false, error: err.message + " *(imegoma kubadiri!)"}
+            return {success: false, error: err.message}
         }
     }
 

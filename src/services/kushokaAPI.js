@@ -37,7 +37,13 @@ export async function addImage(img_object, img_file) {
     .from('images')
     .insert(img_object)
     .select()
-    if(error) throw error;
+    .single()
+    if(error) {
+        await supabase.storage
+        .from('kush-gallery-imgs')
+        .remove([img_object.faili])
+        throw error
+    } 
 
     return data
 }
@@ -48,6 +54,7 @@ export async function editImage(id,img_obj) {
     .update(img_obj)
     .eq('id', id)
     .select()
+    .single()
 
     if(error) throw error
 
