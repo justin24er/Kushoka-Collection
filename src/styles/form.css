@@ -27,7 +27,7 @@ form.changeTitle-form {
     overflow: hidden;
     position: relative;
     color: var(--clr-font);
-    clip-path: path("M 0,15 A 15,15 0,0,1 15,0 L 285,0 A 15,15 0,0,1 300,15 L 300,195 A 15,15 0,0,1 285,210 L 200,210 A 15,15 0,0,0 185,225 L 185,255 L 15,250 A 15,15 0,0,1 0,240 L 0,15 Z")
+    clip-path: path("M 0,15 A 15,15 0,0,1 15,0 L 285,0 A 15,15 0,0,1 300,15 L 300,195 A 15,15 0,0,1 285,210 L 200,210 A 15,15 0,0,0 185,225 L 185,240 A 15,15 0,0,1 170,250 L 15,250 A 15,15 0,0,1 0,240 L 0,15 Z")
 }
 .close-mark {
     position: absolute; 
@@ -63,7 +63,7 @@ form.changeTitle-form {
     gap: 1.8rem;
     padding: 3rem 2rem 4rem;
     overflow: hidden; 
-    clip-path: path("M 0,15 A 15,15 0,0,1 15,0 L 285,0 A 15,15 0,0,1 300,15 L 300,345 A 15,15 0,0,1 285,360 L 200,360 A 15,15 0,0,0 185,375 L 185,400 L 15,400 A 15,15 0,0,1 0,385 Z")
+    clip-path: path("M 0,15 A 15,15 0,0,1 15,0 L 285,0 A 15,15 0,0,1 300,15 L 300,345 A 15,15 0,0,1 285,360 L 200,360 A 15,15 0,0,0 185,375 L 185,390 A 15,15 0,0,1 170,400 L 15,400 A 15,15 0,0,1 0,385 Z")
 }
 .add-img-form label {
     display: flex;
@@ -91,4 +91,17 @@ form.changeTitle-form {
     width: 82%;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+.modify-form {
+    width: 300px;
+    height: 200px;
+    background: var(--clr-bg);
+    color: var(--clr-font);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    padding: 3rem 2rem 4rem;
+    overflow: hidden;
+    clip-path: path("M 0,15 A 15,15 0,0,1 15,0 L 285,0 A 15,15 0,0,1 300,15 L 300,145 A 15,15 0,0,1 285,160 L 200,160 A 15,15 0,0,0 185,175 L 185,190 A 15,15 0,0,1 170,200 L 15,200 A 15,15 0,0,1 0,185 Z")
 }
