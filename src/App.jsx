@@ -289,8 +289,18 @@ function App() {
                                                 <div style={{display: loggedIn ? "flex" : "none"}} className="crud-ellipsis">
                                                     <i className="fa-solid fa-ellipsis-vertical"></i>
                                                     <div className="cruds">
-                                                        <div className="badiri-tarehe">badiri tarehe</div>
-                                                        <div className="badiri-kichwa">badiri kichwa</div>
+                                                        <div 
+                                                            className="badiri-tarehe"
+                                                            onClick={() => {
+                                                                setIsChangeDate(true)
+                                                                setNewDate(image.tarehe)
+                                                            }}>badiri tarehe</div>
+                                                        <div 
+                                                            className="badiri-kichwa"
+                                                            onClick={() => {
+                                                                setIsChangeTitle(true)
+                                                                setNewTitle(image.jina)
+                                                            }}>badiri kichwa</div>
                                                         <div className="futa">futa picha</div>
                                                     </div>
                                                 </div>
@@ -305,8 +315,18 @@ function App() {
                                                 <div style={{display: loggedIn ? "flex" : "none"}} className="crud-ellipsis">
                                                     <i className="fa-solid fa-ellipsis-vertical"></i>
                                                     <div className="cruds">
-                                                        <div className="badiri-tarehe">badiri tarehe</div>
-                                                        <div className="badiri-kichwa">badiri kichwa</div>
+                                                        <div 
+                                                            className="badiri-tarehe"
+                                                            onClick={() => {
+                                                                setIsChangeDate(true)
+                                                                setNewDate(image.tarehe)
+                                                            }}>badiri tarehe</div>
+                                                        <div 
+                                                            className="badiri-kichwa"
+                                                            onClick={() => {
+                                                                setIsChangeTitle(true)
+                                                                setNewTitle(image.jina)
+                                                            }}>badiri kichwa</div>
                                                         <div className="futa">futa picha</div>
                                                     </div>
                                                 </div>
@@ -325,8 +345,18 @@ function App() {
                                                 <div style={{display: loggedIn ? "flex" : "none"}} className="crud-ellipsis">
                                                     <i className="fa-solid fa-ellipsis-vertical"></i>
                                                     <div className="cruds">
-                                                        <div className="badiri-tarehe">badiri tarehe</div>
-                                                        <div className="badiri-kichwa">badiri kichwa</div>
+                                                        <div 
+                                                            className="badiri-tarehe"
+                                                            onClick={() => {
+                                                                setIsChangeDate(true)
+                                                                setNewDate(image.tarehe)
+                                                            }}>badiri tarehe</div>
+                                                        <div 
+                                                            className="badiri-kichwa"
+                                                            onClick={() => {
+                                                                setIsChangeTitle(true)
+                                                                setNewTitle(image.jina)
+                                                            }}>badiri kichwa</div>
                                                         <div className="futa">futa picha</div>
                                                     </div>
                                                 </div>
@@ -341,8 +371,18 @@ function App() {
                                                 <div style={{display: loggedIn ? "flex" : "none"}} className="crud-ellipsis">
                                                     <i className="fa-solid fa-ellipsis-vertical"></i>
                                                     <div className="cruds">
-                                                        <div className="badiri-tarehe">badiri tarehe</div>
-                                                        <div className="badiri-kichwa">badiri kichwa</div>
+                                                        <div 
+                                                            className="badiri-tarehe"
+                                                            onClick={() => {
+                                                                setIsChangeDate(true)
+                                                                setNewDate(image.tarehe)
+                                                            }}>badiri tarehe</div>
+                                                        <div 
+                                                            className="badiri-kichwa"
+                                                            onClick={() => {
+                                                                setIsChangeTitle(true)
+                                                                setNewTitle(image.jina)
+                                                            }}>badiri kichwa</div>
                                                         <div className="futa">futa picha</div>
                                                     </div>
                                                 </div>
@@ -361,8 +401,19 @@ function App() {
                                                 <div style={{display: loggedIn ? "flex" : "none"}} className="crud-ellipsis">
                                                     <i className="fa-solid fa-ellipsis-vertical"></i>
                                                     <div className="cruds">
-                                                        <div className="badiri-tarehe">badiri tarehe</div>
-                                                        <div className="badiri-kichwa">badiri kichwa</div>
+                                                        <div 
+                                                            className="badiri-tarehe"
+                                                            onClick={() => {
+                                                                setIsChangeDate(true)
+                                                                setNewDate(image.tarehe)
+                                                            }}
+                                                            >badiri tarehe</div>
+                                                        <div 
+                                                            className="badiri-kichwa"
+                                                            onClick={() => {
+                                                                setIsChangeTitle(true)
+                                                                setNewTitle(image.jina)
+                                                            }}>badiri kichwa</div>
                                                         <div className="futa">futa picha</div>
                                                     </div>
                                                 </div>
@@ -377,8 +428,19 @@ function App() {
                                                 <div style={{display: loggedIn ? "flex" : "none"}} className="crud-ellipsis">
                                                     <i className="fa-solid fa-ellipsis-vertical"></i>
                                                     <div className="cruds">
-                                                        <div className="badiri-tarehe">badiri tarehe</div>
-                                                        <div className="badiri-kichwa">badiri kichwa</div>
+                                                        <div 
+                                                            className="badiri-tarehe"
+                                                            onClick={() => {
+                                                                setIsChangeDate(true)
+                                                                setNewDate(image.tarehe)
+                                                            }}
+                                                            >badiri tarehe</div>
+                                                        <div 
+                                                            className="badiri-kichwa"
+                                                            onClick={() => {
+                                                                setIsChangeTitle(true)
+                                                                setNewTitle(image.jina)
+                                                            }}>badiri kichwa</div>
                                                         <div className="futa">futa picha</div>
                                                     </div>
                                                 </div>
@@ -523,6 +585,7 @@ function App() {
                                     className="close-mark"
                                     onClick={() => {
                                         setIsChangeDate(false)
+                                        setNewDate("")
                                     }}>x</div>
                                 <div className="form-head">Badiri tarehe</div>
                                 <Input 
@@ -530,6 +593,8 @@ function App() {
                                     value={newDate}
                                     className="tarehe"
                                     onChange={(e) =>  setNewDate(e.target.value)}/>
+                                {formError && <div className="error">{formError}</div>}
+                                {formSuccess && <div className="success">{formSuccess}</div>}
                             </div>
                             <Button type="submit" className="form-cta">badiri</Button>
                         </div>
@@ -544,6 +609,7 @@ function App() {
                                     className="close-mark"
                                     onClick={() => {
                                         setIsChangeTitle(false)
+                                        setNewTitle("")
                                     }}>x</div>
                                 <div className="form-head">Badiri kichwa</div>
                                 <Input 
@@ -553,6 +619,8 @@ function App() {
                                     maxLength="15"
                                     autoComplete="off"
                                     onChange={(e) => setNewTitle(e.target.value)}/>
+                                {formError && <div className="error">{formError}</div>}
+                                {formSuccess && <div className="success">{formSuccess}</div>}
                             </div>
                             <Button type="submit" className="form-cta">badiri</Button>
                         </div>
