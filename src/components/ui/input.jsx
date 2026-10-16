@@ -9,12 +9,14 @@ function Input({
     id,
     onChange,
     maxLength,
+    accept,
     autoComplete
 }) {
     return (
         <input
             ref={ref}
             type={type}
+            accept={accept}
             value={value}
             placeholder={placeholder}
             className={className}

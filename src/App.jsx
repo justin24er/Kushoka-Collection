@@ -43,6 +43,7 @@ function App() {
     const imageWrapperRef = useRef(null)
     const nameRef = useRef(null)
     const passwdRef = useRef(null)
+    const pichaRef = useRef(null)
 
     
     const handleKeyDown = (e) => e.key === "Shift" && setIsKey(true)
@@ -178,6 +179,7 @@ function App() {
         return () => clearTimeout(clear)
     },[formError])
 
+
     return (
         <div style={isLight 
             ? {"--bgAfter": "#f3f1f1", "--bgBefore": "#292929"}
@@ -196,7 +198,7 @@ function App() {
                                     setIsAdminForm(true)
                                 }
                             }}>
-                            {loggedIn ? <p>ondoka <i class="fa-solid fa-right-from-bracket"></i></p> : "msimazi"}
+                            {loggedIn ? <p>ondoka <i className="fa-solid fa-right-from-bracket"></i></p> : "msimazi"}
                         </Button>
                         <Button onClick={handleMode} className="mode-btn">
                             <i className={moon ? `active fa-solid fa-moon` : `fa-solid fa-moon`}></i>
@@ -207,7 +209,7 @@ function App() {
                         style={{display: loggedIn ? "flex" : "none"}}
                         className="add-img-btn"
                         onClick={() => setIsImgForm(true)}>
-                            <i class="fa-solid fa-images"></i>
+                            <i className="fa-solid fa-images"></i>
                     </Button>
                 </header>
                 <section className="main-content">
@@ -426,19 +428,26 @@ function App() {
                                 className="close-mark"
                                 onClick={() => {
                                     setIsImgForm(false)
-                                    setPicha("")
                                     setJina("")
-                                    setJina("")
+                                    setTarehe("")
+                                    pichaRef.current.value = ""
                                     }}>x</div>
                             <div className="form-head">Ongeza Picha</div>
                             <label htmlFor="picha" className="add-img">
                                    <span>Rusha picha</span> 
                                    <Input
                                         type="file"
-                                        value={picha}
+                                        ref={pichaRef}
                                         id="picha"
+                                        accept="image/jpeg"
                                         onChange={(e) => setPicha(e.target.files[0])}
                                         />
+                                        <div className="img-input">
+                                            <i className="fa-solid fa-file-image"></i>
+                                            <div className="filename">
+                                                {picha ? picha.name : "chagua"}
+                                            </div>
+                                        </div>
                             </label>
                             <label htmlFor="jina" className="img-name">
                                    <span>Jina la picha</span> 
