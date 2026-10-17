@@ -43,6 +43,7 @@ form.changeTitle-form {
     font-family: var(--ff-primary)
 }
 .form-card .error,
+.modify-form .error,
 .add-img-form .error {
     font-size: var(--fs-400);
     font-family: monospace
