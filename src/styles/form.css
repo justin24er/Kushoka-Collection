@@ -53,6 +53,20 @@ form.changeTitle-form {
     font-family: monospace;
     color: green;
 }
+.loader {
+    width: 25px;
+    aspect-ratio: 1;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    border-top-color: inherit; 
+    border-left-color: inherit;
+    mask-image: linear-gradient(to top, transparent 20%,black);
+    animation: spin 1s infinite linear;
+    transform: rotate(0deg);
+}
+@keyframes spin {
+    to {transform: rotate(360deg)}
+}
 .add-img-form {
     background: var(--clr-bg);
     color: var(--clr-font);
