@@ -574,7 +574,7 @@ function App() {
                     className="addImage-form"
                     style={{display: isImgForm ? "flex" : "none"}}
                     onSubmit={ () => {
-                        handleImageUpload()
+                        handleImageUpload(event)
                         setLoader(true)
                     }}
                     >
@@ -626,7 +626,7 @@ function App() {
                                         onChange={(e) => setTarehe(e.target.value)}
                                         />
                             </label>
-                            {(loading && loader) && <div className="loader"></div>}
+                            <div className="loader"></div>
                             {formError && <div className="error">{formError}</div>}
                             {formSuccess && <div className="success">{formSuccess}</div>}
                         </div>
