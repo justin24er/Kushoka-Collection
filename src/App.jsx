@@ -16,6 +16,7 @@ function App() {
     const {loading,
            error,
            images,
+           formLoading,
            uploadImage,
            editImageDate,
            removeImage,
@@ -43,6 +44,7 @@ function App() {
     const [newDate, setNewDate] = useState("")
     const [newTitle, setNewTitle] = useState("")
     const [imageId, setImageId] = useState("")
+    const [loader, setLoader] = useState(false)
 
     const elRef = useRef({})
     const imageWrapperRef = useRef(null)
@@ -192,6 +194,7 @@ function App() {
                 setPicha("")
                 setJina("")
                 setTarehe("")
+                setLoader(false)
             }
             else if(!feedback.success) {
                 setFormError("*imeshindikana!")
@@ -302,7 +305,7 @@ function App() {
                              </span>
                         </p>
                     </div>
-                    {loading ? <div className="loading page-album">{loading}</div> : 
+                    {loading ? <div className="loading page-album">loading...</div> : 
                         (error ? <div className="error page-album">{error}</div> : 
                             <div className="page-album">
                                 <div /* ref={scrollRef1} */ className="album-row row-1">
@@ -570,7 +573,10 @@ function App() {
                 <Form
                     className="addImage-form"
                     style={{display: isImgForm ? "flex" : "none"}}
-                    onSubmit={handleImageUpload}
+                    onSubmit={ () => {
+                        handleImageUpload()
+                        setLoader(true)
+                    }}
                     >
                     <div className="formCard-wrapper">
                         <div className="add-img-form">
@@ -620,6 +626,7 @@ function App() {
                                         onChange={(e) => setTarehe(e.target.value)}
                                         />
                             </label>
+                            {(loading && loader) && <div className="loader"></div>}
                             {formError && <div className="error">{formError}</div>}
                             {formSuccess && <div className="success">{formSuccess}</div>}
                         </div>
@@ -645,6 +652,7 @@ function App() {
                                     value={newDate}
                                     className="tarehe"
                                     onChange={(e) =>  setNewDate(e.target.value)}/>
+                                {loading && <div className="loader"></div>}
                                 {formError && <div className="error">{formError}</div>}
                                 {formSuccess && <div className="success">{formSuccess}</div>}
                             </div>
@@ -672,6 +680,7 @@ function App() {
                                     maxLength="15"
                                     autoComplete="off"
                                     onChange={(e) => setNewTitle(e.target.value)}/>
+                                {loading && <div className="loader"></div>}
                                 {formError && <div className="error">{formError}</div>}
                                 {formSuccess && <div className="success">{formSuccess}</div>}
                             </div>

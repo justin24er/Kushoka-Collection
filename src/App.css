@@ -54,6 +54,10 @@ section.main-content {
 .error {
     color: red;
 }
+.loading {
+    letter-spacing: 2px;
+    color: var(--clr-font);
+}
 .album-row {
     height: 200px;
     overflow-x: scroll;
