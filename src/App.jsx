@@ -42,6 +42,7 @@ function App() {
     const [isChangeTitle, setIsChangeTitle] = useState(false)
     const [newDate, setNewDate] = useState("")
     const [newTitle, setNewTitle] = useState("")
+    const [imageId, setImageId] = useState("")
 
     const elRef = useRef({})
     const imageWrapperRef = useRef(null)
@@ -188,24 +189,50 @@ function App() {
                                     },picha)
             if(feedback.success) {
                 setFormSuccess("imefanikiwa!")
+                setPicha("")
+                setJina("")
+                setTarehe("")
             }
             else if(!feedback.success) {
                 setFormError("*imeshindikana!")
-                console.log(feedback.error)
             }
         }
     }
 
     async function handleChangeDate(event)  {
         event.preventDefault();
+
+        if(newDate === "") {
+            setFormError("*jaza taarifa zote")
+        }
+        else {
+            const feedback = await editImageDate(imageId,{tarehe: newDate})
+            if(feedback.success) { 
+                setFormSuccess("imefanikiwa!")
+                setNewDate("")
+             }
+            else if(!feedback.success) setFormError("*imeshindikana!")
+        }
     }
 
     async function handleChangeTitle(event) {
         event.preventDefault();
+
+        if(newTitle === "") {
+            setFormError("*jaza taarifa zote")
+        }
+        else {
+            const feedback = await editImageJina(imageId, {jina: newTitle})
+            if(feedback.success) {
+                setFormSuccess("imefanikiwa!")
+                setNewTitle("")
+            }
+            else if(!feedback.success) setFormError("*imeshindikana!")
+        }
     }
 
-    async function deleteImage() {
-
+    async function handleDeleteImage(image_id,file_name) {
+        const feedback = await removeImage(image_id,file_name)
     }
 
     useEffect(() => {
@@ -294,14 +321,18 @@ function App() {
                                                             onClick={() => {
                                                                 setIsChangeDate(true)
                                                                 setNewDate(image.tarehe)
+                                                                setImageId(image.id)
                                                             }}>badiri tarehe</div>
                                                         <div 
                                                             className="badiri-kichwa"
                                                             onClick={() => {
                                                                 setIsChangeTitle(true)
                                                                 setNewTitle(image.jina)
+                                                                setImageId(image.id)
                                                             }}>badiri kichwa</div>
-                                                        <div className="futa">futa picha</div>
+                                                        <div
+                                                            onClick={() => handleDeleteImage(image.id,image.faili)} 
+                                                            className="futa">futa picha</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -320,14 +351,18 @@ function App() {
                                                             onClick={() => {
                                                                 setIsChangeDate(true)
                                                                 setNewDate(image.tarehe)
+                                                                setImageId(image.id)
                                                             }}>badiri tarehe</div>
                                                         <div 
                                                             className="badiri-kichwa"
                                                             onClick={() => {
                                                                 setIsChangeTitle(true)
                                                                 setNewTitle(image.jina)
+                                                                setImageId(image.id)
                                                             }}>badiri kichwa</div>
-                                                        <div className="futa">futa picha</div>
+                                                        <div
+                                                            onClick={() => handleDeleteImage(image.id,image.faili)} 
+                                                            className="futa">futa picha</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -350,14 +385,18 @@ function App() {
                                                             onClick={() => {
                                                                 setIsChangeDate(true)
                                                                 setNewDate(image.tarehe)
+                                                                setImageId(image.id)
                                                             }}>badiri tarehe</div>
                                                         <div 
                                                             className="badiri-kichwa"
                                                             onClick={() => {
                                                                 setIsChangeTitle(true)
                                                                 setNewTitle(image.jina)
+                                                                setImageId(image.id)
                                                             }}>badiri kichwa</div>
-                                                        <div className="futa">futa picha</div>
+                                                        <div
+                                                            onClick={() => handleDeleteImage(image.id,image.faili)} 
+                                                            className="futa">futa picha</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -376,14 +415,18 @@ function App() {
                                                             onClick={() => {
                                                                 setIsChangeDate(true)
                                                                 setNewDate(image.tarehe)
+                                                                setImageId(image.id)
                                                             }}>badiri tarehe</div>
                                                         <div 
                                                             className="badiri-kichwa"
                                                             onClick={() => {
                                                                 setIsChangeTitle(true)
                                                                 setNewTitle(image.jina)
+                                                                setImageId(image.id)
                                                             }}>badiri kichwa</div>
-                                                        <div className="futa">futa picha</div>
+                                                        <div
+                                                            onClick={() => handleDeleteImage(image.id,image.faili)} 
+                                                            className="futa">futa picha</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -406,6 +449,7 @@ function App() {
                                                             onClick={() => {
                                                                 setIsChangeDate(true)
                                                                 setNewDate(image.tarehe)
+                                                                setImageId(image.id)
                                                             }}
                                                             >badiri tarehe</div>
                                                         <div 
@@ -413,8 +457,11 @@ function App() {
                                                             onClick={() => {
                                                                 setIsChangeTitle(true)
                                                                 setNewTitle(image.jina)
+                                                                setImageId(image.id)
                                                             }}>badiri kichwa</div>
-                                                        <div className="futa">futa picha</div>
+                                                        <div
+                                                            onClick={() => handleDeleteImage(image.id,image.faili)} 
+                                                            className="futa">futa picha</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -433,6 +480,7 @@ function App() {
                                                             onClick={() => {
                                                                 setIsChangeDate(true)
                                                                 setNewDate(image.tarehe)
+                                                                setImageId(image.id)
                                                             }}
                                                             >badiri tarehe</div>
                                                         <div 
@@ -440,8 +488,11 @@ function App() {
                                                             onClick={() => {
                                                                 setIsChangeTitle(true)
                                                                 setNewTitle(image.jina)
+                                                                setImageId(image.id)
                                                             }}>badiri kichwa</div>
-                                                        <div className="futa">futa picha</div>
+                                                        <div
+                                                            onClick={() => handleDeleteImage(image.id,image.faili)} 
+                                                            className="futa">futa picha</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -586,6 +637,7 @@ function App() {
                                     onClick={() => {
                                         setIsChangeDate(false)
                                         setNewDate("")
+                                        setImageId("")
                                     }}>x</div>
                                 <div className="form-head">Badiri tarehe</div>
                                 <Input 
@@ -610,6 +662,7 @@ function App() {
                                     onClick={() => {
                                         setIsChangeTitle(false)
                                         setNewTitle("")
+                                        setImageId("")
                                     }}>x</div>
                                 <div className="form-head">Badiri kichwa</div>
                                 <Input 
