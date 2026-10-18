@@ -635,7 +635,10 @@ function App() {
                 <Form 
                     className="changeDate-form"
                     style={{display: isChangeDate ? "flex" : "none"}}
-                    onSubmit={handleChangeDate}>
+                    onSubmit={() => {
+                        handleChangeDate(event)
+                        setLoader(true)
+                    }}>
                         <div className="formCard-wrapper">
                             <div className="modify-form">
                                 <div 
@@ -651,6 +654,7 @@ function App() {
                                     value={newDate}
                                     className="tarehe"
                                     onChange={(e) =>  setNewDate(e.target.value)}/>
+                                {(loader && !formError && !formSuccess) && <div className="loader"></div>}
                                 {formError && <div className="error">{formError}</div>}
                                 {formSuccess && <div className="success">{formSuccess}</div>}
                             </div>
@@ -660,7 +664,10 @@ function App() {
                 <Form 
                     className="changeTitle-form"
                     style={{display: isChangeTitle ? "flex" : "none"}}
-                    onSubmit={handleChangeTitle}>
+                    onSubmit={() => {
+                        handleChangeTitle(event)
+                        setLoader(true)
+                    }}>
                         <div className="formCard-wrapper">
                             <div className="modify-form">
                                 <div 
@@ -678,6 +685,7 @@ function App() {
                                     maxLength="15"
                                     autoComplete="off"
                                     onChange={(e) => setNewTitle(e.target.value)}/>
+                                {(loader && !formError && !formSuccess) && <div className="loader"></div>}
                                 {formError && <div className="error">{formError}</div>}
                                 {formSuccess && <div className="success">{formSuccess}</div>}
                             </div>
