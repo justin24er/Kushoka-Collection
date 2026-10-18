@@ -1,5 +1,5 @@
 ::selection {
-    background: orange;
+    background: var(--clr-footer-a);
     color: #292929
 }
 main {
@@ -52,7 +52,7 @@ section.main-content {
     }
 }
 .error {
-    color: red;
+    color: var(--clr-error);
 }
 .loading {
     letter-spacing: 2px;
@@ -184,7 +184,7 @@ section.main-content {
     transition: .2s;
 }
 div.futa {
-    color: red;
+    color: var(--clr-error);
 }
 .cruds > div:hover {
     outline-color: #0000008e;
@@ -310,6 +310,30 @@ footer::before {right: -2rem} */
 footer a {
     margin-inline-start: .5rem;
     text-decoration: none;
-    color: orange;
+    color: var(--clr-footer-a);
     cursor: pointer;
 }
+.deletion-notifier {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    background: var(--clr-font);
+    color: var(--clr-bg);
+    width: 150px;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    padding-inline: .5rem;
+    font-family: var(--ff-sub);
+    border-radius: 20px;
+    corner-shape: squircle
+}
+.deletion-notifier > span {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+.deletion-notifier .error+i {color: var(--clr-error)}
+.deletion-notifier .success+i {color: var(--clr-success)}
+.deletion-notifier .error,
+.deletion-notifier .success {font-size: inherit}

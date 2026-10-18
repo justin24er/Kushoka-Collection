@@ -51,7 +51,7 @@ form.changeTitle-form {
 .success {
     font-size: var(--fs-400);
     font-family: monospace;
-    color: green;
+    color: var(--clr-success);
 }
 .loader {
     width: 25px;
