@@ -175,8 +175,8 @@ section.main-content {
     display: flex;
 }
 .cruds > div {
-    color: #212121;
-    background: #f3f1f1;
+    color: var(--clr-font);
+    background: var(--clr-bg);
     padding: .3rem .5rem;
     font-weight: var(--fw-600);
     outline: 1px dashed transparent;
@@ -315,7 +315,8 @@ footer a {
 }
 .deletion-notifier {
     position: fixed;
-    right: 10px;
+    z-index: 1000;
+    right: -150px;
     top: 10px;
     background: var(--clr-font);
     color: var(--clr-bg);
@@ -326,7 +327,11 @@ footer a {
     padding-inline: .5rem;
     font-family: var(--ff-sub);
     border-radius: 20px;
-    corner-shape: squircle
+    corner-shape: squircle;
+    animation: slideIn ease 1 .3s forwards;
+}
+@keyframes slideIn {
+    to {right: 10px}
 }
 .deletion-notifier > span {
     display: flex;

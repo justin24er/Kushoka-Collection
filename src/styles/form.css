@@ -9,7 +9,7 @@ form.changeTitle-form {
     backdrop-filter: blur(2px) brightness(40%);
     align-items: center;
     justify-content: center;
-    z-index: 500;
+    z-index: 999;
 }
 .formCard-wrapper {
     height: max-content;

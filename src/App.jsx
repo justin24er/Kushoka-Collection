@@ -44,6 +44,7 @@ function App() {
     const [newTitle, setNewTitle] = useState("")
     const [imageId, setImageId] = useState("")
     const [loader, setLoader] = useState(false)
+    const [delLoader, setDelLoader] = useState(false)
 
     const elRef = useRef({})
     const imageWrapperRef = useRef(null)
@@ -247,6 +248,7 @@ function App() {
             setFormError("")
             setFormSuccess("")
             setLoader(false)
+            setDelLoader(false)
         },5000)
         return () => clearTimeout(clear)
     },[formError,formSuccess])
@@ -341,7 +343,7 @@ function App() {
                                                         <div
                                                             onClick={() => {
                                                                 handleDeleteImage(image.id,image.faili)
-                                                                setLoader(true)
+                                                                setDelLoader(true)
                                                             }}
                                                             className="futa">futa picha</div>
                                                     </div>
@@ -374,7 +376,7 @@ function App() {
                                                         <div
                                                             onClick={() => {
                                                                 handleDeleteImage(image.id,image.faili)
-                                                                setLoader(true)
+                                                                setDelLoader(true)
                                                             }}
                                                             className="futa">futa picha</div>
                                                     </div>
@@ -411,7 +413,7 @@ function App() {
                                                         <div
                                                             onClick={() => {
                                                                 handleDeleteImage(image.id,image.faili)
-                                                                setLoader(true)
+                                                                setDelLoader(true)
                                                             }}
                                                             className="futa">futa picha</div>
                                                     </div>
@@ -444,7 +446,7 @@ function App() {
                                                         <div
                                                             onClick={() => {
                                                                 handleDeleteImage(image.id,image.faili)
-                                                                setLoader(true)
+                                                                setDelLoader(true)
                                                             }}
                                                             className="futa">futa picha</div>
                                                     </div>
@@ -482,7 +484,7 @@ function App() {
                                                         <div
                                                             onClick={() => {
                                                                 handleDeleteImage(image.id,image.faili)
-                                                                setLoader(true)
+                                                                setDelLoader(true)
                                                             }}
                                                             className="futa">futa picha</div>
                                                     </div>
@@ -516,7 +518,7 @@ function App() {
                                                         <div
                                                             onClick={() => {
                                                                 handleDeleteImage(image.id,image.faili)
-                                                                setLoader(true)
+                                                                setDelLoader(true)
                                                             }}
                                                             className="futa">futa picha</div>
                                                     </div>
@@ -716,25 +718,27 @@ function App() {
                             <Button type="submit" className="form-cta">badiri</Button>
                         </div>
                     </Form>
-                    <div className="deletion-notifier">
-                        {loader && 
-                        !formError && 
-                        !formSuccess && 
-                        <span>
-                            <div className="loader"></div>
-                            <div>deleting...</div>
-                        </span>}
-                        {formError && 
+                    {delLoader &&
+                        <div className="deletion-notifier">
+                            {delLoader && 
+                            !formError && 
+                            !formSuccess && 
                             <span>
-                                <div className="error">{formError}</div>
-                                <i className="fa-solid fa-xmark"></i>
+                                <div className="loader"></div>
+                                <div>deleting...</div>
                             </span>}
-                        {formSuccess && 
-                            <span>
-                                <div className="success">{formSuccess}</div>
-                                <i className="fa-solid fa-check"></i>
-                            </span>}
-                    </div>
+                            {formError && 
+                                <span>
+                                    <div className="error">{formError}</div>
+                                    <i className="fa-solid fa-xmark"></i>
+                                </span>}
+                            {formSuccess && 
+                                <span>
+                                    <div className="success">{formSuccess}</div>
+                                    <i className="fa-solid fa-check"></i>
+                                </span>}
+                        </div>
+                    }
                 <footer>
                     &copy; All rights reserved {(new Date())
                     .toLocaleDateString()
