@@ -13,6 +13,10 @@
     --card-bg: #292929;
     --img-hover: var(--card-bg);
     --clr-btn-border: #292929;
+
+    --clr-success: #04cf04;
+    --clr-error: red;
+    --clr-footer-a: orange;
     
 
     --fs-300: 10px;
