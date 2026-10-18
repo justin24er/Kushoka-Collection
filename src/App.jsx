@@ -180,7 +180,6 @@ function App() {
            tarehe === ""
         ) {
             setFormError("*jaza taarifa zote")
-            setLoader(false)
         }
         else {
             const file_name = `${Date.now()}-${picha.name}`
@@ -194,11 +193,9 @@ function App() {
                 setPicha("")
                 setJina("")
                 setTarehe("")
-                setLoader(false)
             }
             else if(!feedback.success) {
                 setFormError("*imeshindikana!")
-                setLoader(false)
             }
         }
     }
@@ -243,6 +240,7 @@ function App() {
         const clear = setTimeout(() => {
             setFormError("")
             setFormSuccess("")
+            setLoader(false)
         },5000)
         return () => clearTimeout(clear)
     },[formError,formSuccess])
