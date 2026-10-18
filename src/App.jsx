@@ -16,7 +16,6 @@ function App() {
     const {loading,
            error,
            images,
-           formLoading,
            uploadImage,
            editImageDate,
            removeImage,
@@ -181,6 +180,7 @@ function App() {
            tarehe === ""
         ) {
             setFormError("*jaza taarifa zote")
+            setLoader(false)
         }
         else {
             const file_name = `${Date.now()}-${picha.name}`
@@ -198,6 +198,7 @@ function App() {
             }
             else if(!feedback.success) {
                 setFormError("*imeshindikana!")
+                setLoader(false)
             }
         }
     }
@@ -626,7 +627,7 @@ function App() {
                                         onChange={(e) => setTarehe(e.target.value)}
                                         />
                             </label>
-                            <div className="loader"></div>
+                            {(loader && !formError && !formSuccess) && <div className="loader"></div>}
                             {formError && <div className="error">{formError}</div>}
                             {formSuccess && <div className="success">{formSuccess}</div>}
                         </div>
@@ -652,7 +653,6 @@ function App() {
                                     value={newDate}
                                     className="tarehe"
                                     onChange={(e) =>  setNewDate(e.target.value)}/>
-                                {loading && <div className="loader"></div>}
                                 {formError && <div className="error">{formError}</div>}
                                 {formSuccess && <div className="success">{formSuccess}</div>}
                             </div>
@@ -680,7 +680,6 @@ function App() {
                                     maxLength="15"
                                     autoComplete="off"
                                     onChange={(e) => setNewTitle(e.target.value)}/>
-                                {loading && <div className="loader"></div>}
                                 {formError && <div className="error">{formError}</div>}
                                 {formSuccess && <div className="success">{formSuccess}</div>}
                             </div>

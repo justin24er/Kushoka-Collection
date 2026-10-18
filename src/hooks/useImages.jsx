@@ -9,7 +9,6 @@ const initialStates = {
     loading: true,
     error: null,
     images: [],
-    formLoading: true
 }
 
 function reducer(state, action) {
@@ -24,25 +23,21 @@ function reducer(state, action) {
         }
         case "add": return {...state,
             images: [...state.images, action.payload],
-            formLoading: false
         }
         case "delete": return {...state,
             images: state.images.filter(image => image.id !== action.payload),
-            formLoading: false
         }
         case "edit_date": return {...state,
             images: state.images.map(image => image.id === action.payload.id
                 ? {...image, tarehe: action.payload.tarehe}
                 : image
             ),
-            formLoading: false
         }
         case "edit_jina": return {...state,
             images: state.images.map(image => image.id === action.payload.id
                                               ? {...image, jina: action.payload.jina}
                                               : image
             ),
-            formLoading: false
         }
         default: return state;
     }
@@ -129,7 +124,6 @@ export function useImages() {
     return {loading: allImages.loading,
             error: allImages.error,
             images: allImages.images,
-            formLoading: allImages.formLoading,
             uploadImage,
             removeImage,
             editImageDate,
