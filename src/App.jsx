@@ -45,6 +45,7 @@ function App() {
     const [imageId, setImageId] = useState("")
     const [loader, setLoader] = useState(false)
     const [delLoader, setDelLoader] = useState(false)
+    const [isCruds, setIsCruds] = useState(false)
 
     const elRef = useRef({})
     const imageWrapperRef = useRef(null)
@@ -535,11 +536,11 @@ function App() {
                     className="image-viewer">
                         <Button 
                             className="card-close"
-                            onClick={() => setView("")}>x</Button>
+                            onClick={() => {setView("");setIsCruds(false)}}>x</Button>
                         <Button onClick={scrollLeft} className="toggle left">{`<`}</Button>
                         <div
                             ref={imageWrapperRef} 
-                            onClick={scrollLeft} className="image-scroll-wrapper">
+                            className="image-scroll-wrapper">
                             {images.map(image => (
                                 <div 
                                     ref={(el) => elRef.current[image.id] = el}
@@ -547,7 +548,33 @@ function App() {
                                     className="image-view"
                                     title={image.jina}
                                 >
-                                    <img src={image.url} loading="lazy" alt={image.jina} />
+                                    <img onClick={() => setIsCruds(false)} src={image.url} loading="lazy" alt={image.jina} />
+                                    <div style={{display: loggedIn ? "flex" : "none"}} onClick={() => setIsCruds(prev => !prev)} className="crud-ellipsis">
+                                        <i className="fa-solid fa-ellipsis-vertical"></i>
+                                    </div>
+                                    <div style={{display: isCruds ? "flex" : "none"}} className="cruds">
+                                        <div 
+                                            className="badiri-tarehe"
+                                            onClick={() => {
+                                                setIsChangeDate(true)
+                                                setNewDate(image.tarehe)
+                                                setImageId(image.id)
+                                            }}
+                                            ><i className="fa-solid fa-calendar-days"></i> &nbsp;badiri tarehe</div>
+                                        <div 
+                                            className="badiri-kichwa"
+                                            onClick={() => {
+                                                setIsChangeTitle(true)
+                                                setNewTitle(image.jina)
+                                                setImageId(image.id)
+                                            }}><i className="fa-solid fa-pen-clip"></i> &nbsp;badiri kichwa</div>
+                                        <div
+                                            onClick={() => {
+                                                handleDeleteImage(image.id,image.faili)
+                                                setDelLoader(true)
+                                            }}
+                                            className="futa"><i class="fa-solid fa-trash"></i> &nbsp;futa picha</div>
+                                    </div>
                                     <span className="image-info">
                                         <div className="img-date">{image.tarehe}</div>
                                         <div className="img-title">{image.jina}</div>
@@ -725,7 +752,7 @@ function App() {
                             !formSuccess && 
                             <span>
                                 <div className="loader"></div>
-                                <div>deleting...</div>
+                                <div>subiri...</div>
                             </span>}
                             {formError && 
                                 <span>

@@ -157,10 +157,10 @@ section.main-content {
     right: 10px;
     cursor: pointer;
 }
-.crud-ellipsis:hover .cruds {
+.image-container .crud-ellipsis:hover .cruds {
     display: flex;
 }
-.cruds {
+.image-container .cruds {
     font-size: var(--fs-300);
     position: absolute;
     text-wrap: nowrap;
@@ -171,10 +171,10 @@ section.main-content {
     flex-direction: column;
     gap: .5rem;
 }
-.cruds:hover {
+.image-container .cruds:hover {
     display: flex;
 }
-.cruds > div {
+.image-container .cruds > div {
     color: var(--clr-font);
     background: var(--clr-bg);
     padding: .3rem .5rem;
@@ -183,10 +183,10 @@ section.main-content {
     outline-offset: -2px;
     transition: .2s;
 }
-div.futa {
+.image-container .cruds div.futa {
     color: var(--clr-error);
 }
-.cruds > div:hover {
+.image-container .cruds > div:hover {
     outline-color: #0000008e;
 }
 .page-des {
