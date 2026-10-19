@@ -1,8 +1,13 @@
-<h1 align="center"><strong>Kumbukumbu za Kushoka</strong></h1>
+<h1 align="center">
+    <img src="./public/kc-icon.png" width="30" alt="logo">
+    <strong>Kumbukumbu za Kushoka</strong>
+</h1>
 
 ### A simple Swahili-made image portal, carrying the basic tasks, like viewing , adding, deleting and editing images collection
 - #### below is the clear overview of the page 
 ![page-overview](./src/assets/page-overview.png)
+- #### and here is the MOBILE VIEW
+![mobile-view](./src/assets/mobile-view.png)
 
 ### Stacks used in the development , provided as follows
 <a href="https://github.com/justin24er">
@@ -50,3 +55,12 @@
     - clr-success: #04cf04;
     - clr-error: red;
     - clr-footer-a: orange;
+
+    ### How to test or check it 
+    - clone the repo, onto the terminal and run 
+    ```
+    npm install
+    npx vite --host
+    o + enter 
+    ```
+    - might show blank since the .env varibles aren't there, then check via [kushoka-collection](https://kushoka-collection.vercel.app)
