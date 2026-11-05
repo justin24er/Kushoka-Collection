@@ -169,7 +169,7 @@ function App() {
        else {
         setLoggedIn(true)
         setName("")
-        setPasswd("")
+        setFormError("")
         setIsAdminForm(false)
        }
     }
