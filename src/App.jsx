@@ -297,12 +297,9 @@ function App() {
                             </span>
                             <span className="name-tag">Kushoka</span>
                         </h1>
-                        <p>taarifa ndogondogo na kumbukizi 
-                            juu ya miradi na maendeleo yaliobebwa
-                             na familia ya Kushoka, katika vipindi tofauti tofauti
-                             vya matukio. yote katika kuimarisha mawasiliano na umoja
-                             wa familia, pitia picha zifuatazo zilizowekwa kama kumbukumbu
-                             za matukio hayo.<br></br>
+                        <p>Polepole si kushindwa: ni kujenga kwa uwezo
+                            hekima na matumaini. Kila hatua ndogo inasogeza 
+                            karibu na nyumba ya ndoto<br></br>
                              <span className="instructions">
                                 kwa matumizi ya computer, shikiria(hold)&nbsp;
                                     <strong className={isKey ? "active" : ""}>
