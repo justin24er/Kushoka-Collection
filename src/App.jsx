@@ -290,12 +290,12 @@ function App() {
                 <section className="main-content">
                     <div className="page-des">
                         <h1 className="page-title">
-                            <span>Kumbukumbu</span>
+                            <span>Dhamira</span>
                             <span className="letter-list" aria-label="za">
-                                <span data-letter="z"></span>
+                                <span data-letter="n"></span>
                                 <span data-letter="a"></span>
                             </span>
-                            <span className="name-tag">Kushoka</span>
+                            <span className="name-tag">Utekelezaji</span>
                         </h1>
                         <p>Polepole si kushindwa: ni kujenga kwa uwezo
                             hekima na matumaini. Kila hatua ndogo inasogeza 
