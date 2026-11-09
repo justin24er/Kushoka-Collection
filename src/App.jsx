@@ -297,9 +297,9 @@ function App() {
                             </span>
                             <span className="name-tag">Utekelezaji</span>
                         </h1>
-                        <p>Polepole si kushindwa: ni kujenga kwa uwezo
+                        <p>Polepole si kushindwa ni kujenga kwa uwezo
                             hekima na matumaini. Kila hatua ndogo inasogeza 
-                            karibu na nyumba ya ndoto<br></br>
+                            karibu na nyumba.<br></br>
                              <span className="instructions">
                                 kwa matumizi ya computer, shikiria(hold)&nbsp;
                                     <strong className={isKey ? "active" : ""}>
