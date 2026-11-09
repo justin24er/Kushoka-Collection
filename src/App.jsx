@@ -767,7 +767,7 @@ function App() {
                     &copy; All rights reserved {(new Date())
                     .toLocaleDateString()
                     .split("/")[2]}. 
-                    imetengenezwa na kuandaliwa na <a href="#">Samwel Kushoka Cheo</a>.
+                    imetengenezwa na kuandaliwa na <a href="#">Kushoka Cheo</a>.
                 </footer>
             </main>
         </div>)
