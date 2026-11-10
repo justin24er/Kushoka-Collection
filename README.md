@@ -1,6 +1,6 @@
 <h1 align="center">
-    <img src="./public/kc-icon.png" width="30" alt="logo">
-    <strong>Kumbukumbu za Kushoka</strong>
+    <img src="./public/hN-icon.png" width="30" alt="logo">
+    <strong>Dhamira na Utekelezaji</strong>
 </h1>
 
 ### A simple Swahili-made image portal, carrying the basic tasks, like viewing , adding, deleting and editing images collection
